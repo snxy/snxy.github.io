@@ -152,32 +152,91 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-我的第一篇博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-python之路" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/15/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">测试文</a>
+      <a class="article-title" href="/2020/09/29/python%E4%B9%8B%E8%B7%AF/">python之路</a>
     </h1>
   
 
         
-        <a href="/2020/05/15/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
-  	<time datetime="2020-05-15T14:09:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-15</time>
+        <a href="/2020/09/29/python%E4%B9%8B%E8%B7%AF/" class="archive-article-date">
+  	<time datetime="2020-09-29T13:47:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-29</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h2><p>内容</p>
-<hr>
-<h2 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h2><p>内容</p>
-<hr>
-<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://www.baidu.com" target="_blank" rel="noopener">https://www.baidu.com</a></p>
+        <h2 id="基本的数据类型"><a href="#基本的数据类型" class="headerlink" title="基本的数据类型:"></a>基本的数据类型:</h2><pre><code>* str
+* int
+* dict
+* tuple
+* set
+* list</code></pre><h2 id="模块"><a href="#模块" class="headerlink" title="模块:"></a>模块:</h2><h2 id="内置模块"><a href="#内置模块" class="headerlink" title="内置模块"></a>内置模块</h2><ul>
+<li><p>os              用于提供系统级别的操作</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">os.getcwd() 获取当前工作目录，即当前python脚本工作的项目的路径</span><br><span class="line">os.chdir(<span class="string">"dirname"</span>)  改变当前脚本工作目录；相当于shell下cd</span><br><span class="line">os.curdir  返回当前目录: (<span class="string">'.'</span>)   </span><br><span class="line">os.pardir  获取当前目录的父目录字符串名：(<span class="string">'..'</span>)</span><br><span class="line">os.mkdir(<span class="string">'dirname'</span>)    生成单级目录；相当于shell中mkdir dirname,只能生成一级目录,不能生成多级目录.参数为相对路径,没有返回值</span><br><span class="line">os.makedirs(<span class="string">'dirname1/dirname2'</span>)    可生成多层递归目录,即可创建多级目录,参数为相对路径,没有返回值,建议使用!</span><br><span class="line">os.removedirs(<span class="string">'dirname1'</span>)    若目录为空，则删除，并递归到上一级目录，如若也为空，则删除，依此类推</span><br><span class="line">os.rmdir(<span class="string">'dirname'</span>)    删除单级空目录，若目录不为空则无法删除，报错；相当于shell中rmdir dirname</span><br><span class="line">os.listdir(<span class="string">'dirname'</span>)    列出指定目录下的所有文件和子目录，包括隐藏文件，并以列表方式打印</span><br><span class="line">os.remove()  删除一个文件,参数为要删除文件的相对路径,没有返回值</span><br><span class="line">os.rename(<span class="string">"oldname"</span>,<span class="string">"newname"</span>)  重命名文件/目录</span><br><span class="line">os.stat(<span class="string">'path/filename'</span>)  获取文件/目录信息</span><br><span class="line">os.sep    输出操作系统特定的路径分隔符，win下为<span class="string">"\\"</span>,Linux下为<span class="string">"/"</span></span><br><span class="line">os.linesep    输出当前平台使用的行终止符，win下为<span class="string">"\t\n"</span>,Linux下为<span class="string">"\n"</span></span><br><span class="line">os.pathsep    输出用于分割文件路径的字符串</span><br><span class="line">os.name    输出字符串指示当前使用平台。win-&gt;'nt'; Linux-&gt;'posix'</span><br><span class="line">os.system(<span class="string">"bash command"</span>)  运行shell命令，直接显示</span><br><span class="line">os.environ  获取系统环境变量</span><br><span class="line">os.path.abspath(path)  返回path规范化的绝对路径</span><br><span class="line">os.path.split(path)  将path分割成目录和文件名二元组返回</span><br><span class="line">os.path.dirname(path)  返回path的目录。其实就是os.path.split(path)的第一个元素</span><br><span class="line">os.path.basename(path)  返回path最后的文件名。如何path以／或\结尾，那么就会返回空值。即os.path.split(path)的第二个元素</span><br><span class="line">os.path.exists(path)  如果path存在，返回<span class="literal">True</span>；如果path不存在，返回<span class="literal">False</span></span><br><span class="line">os.path.isabs(path)  如果path是绝对路径，返回<span class="literal">True</span></span><br><span class="line">os.path.isfile(path)  如果path是一个存在的文件，返回<span class="literal">True</span>。否则返回<span class="literal">False</span></span><br><span class="line">os.path.isdir(path)  如果path是一个存在的目录，则返回<span class="literal">True</span>。否则返回<span class="literal">False</span></span><br><span class="line">os.path.join(path1[, path2[, ...]])  将多个路径组合后返回，第一个绝对路径之前的参数将被忽略</span><br><span class="line">os.path.getatime(path)  返回path所指向的文件或者目录的最后存取时间</span><br><span class="line">os.path.getmtime(path)  返回path所指向的文件或者目录的最后修改时间</span><br></pre></td></tr></table></figure>
 
+
+
+</li>
+</ul>
+<ul>
+<li><p>sys            用于提供对解释器相关的操作</p>
+</li>
+<li><p>shutil         –移动 复制 打包 压缩 解压</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">shutil.copyfileobj(fsrc, fdst[, length=<span class="number">16</span>*<span class="number">1024</span>])  <span class="comment"># 将文件内容拷贝到另一个文件中,可以指定大小的内容,示例:</span></span><br><span class="line">											  <span class="comment"># shutil.copyfileobj(open('old.xml','r'), open('new.xml', 'w'))</span></span><br><span class="line">shutil.copyfile(src, dst)  <span class="comment"># 复制文件 shutil.copyfile('f1.log', 'f2.log') 目标文件无需存在，copyfile内部调用了</span></span><br><span class="line">						 <span class="comment"># copyfileobj	如果想删除E盘下某个文件夹</span></span><br><span class="line">shutil.rmtree(path[, ignore_errors[, onerror]])  <span class="comment"># 递归的去删除文件	如果想删除某个文件夹,这个方法可以删除这个文件夹【包括</span></span><br><span class="line">											 <span class="comment"># 子文件夹】示例：shutil.rmtree('folder1')</span></span><br><span class="line">shutil.move(src, dst)    <span class="comment"># 递归的去移动文件，它类似mv命令，也可以重命名。移动文件夹或者文件  示例：</span></span><br><span class="line">					   <span class="comment"># shutil.move('folder1', 'folder3')</span></span><br><span class="line"><span class="comment"># 压缩</span></span><br><span class="line">make_archive(base_name, format, root_dir=<span class="literal">None</span>, base_dir=<span class="literal">None</span>, verbose=<span class="number">0</span>,dry_run=<span class="number">0</span>, owner=<span class="literal">None</span>, group=<span class="literal">None</span>, logger=<span class="literal">None</span>)</span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">  * base_name： 压缩包的文件名，也可以是压缩包的路径。只是文件名时，则保存至当前目录，否则保存至指定路径，</span></span><br><span class="line"><span class="string"> 	 * 如 data_bak =&gt;保存至当前路径</span></span><br><span class="line"><span class="string"> 	 * 如：/tmp/data_bak =&gt;保存至/tmp/</span></span><br><span class="line"><span class="string">  * format：	压缩包种类，“zip”, “tar”, “bztar”，“gztar”</span></span><br><span class="line"><span class="string">  * root_dir：要压缩的文件夹路径（默认当前目录）</span></span><br><span class="line"><span class="string">  * base_dir：要进行压缩的源文件或目录</span></span><br><span class="line"><span class="string">  * owner：	用户，默认当前用户</span></span><br><span class="line"><span class="string">  * group：	组，默认当前组</span></span><br><span class="line"><span class="string">  * logger：	用于记录日志，通常是logging.Logger对象</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="comment"># 解压缩</span></span><br><span class="line">shutil.unpack_archive(filename, extract_dir=<span class="literal">None</span>, format=<span class="literal">None</span>)</span><br><span class="line">	<span class="comment"># 列子</span></span><br><span class="line">    	shutil.unpack_archive(<span class="string">'/home/1/a.zip'</span>, <span class="string">'/home/2/'</span>)  <span class="comment"># 把'/home/1/a.zip'p解压缩到'/home/2/'format可以不写，自动识别文件类型</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<ul>
+<li><p>hashlib      用于加密相关的操作，代替了md5模块和sha模块</p>
+</li>
+<li><p>json           将字符串 和 python的某些数据类型(int, str, dict, list……)进行转换</p>
+<p><img src="https://images.cnblogs.com/cnblogs_com/coser/201112/201112141621131652.png" alt="image"></p>
+</li>
+</ul>
+<ul>
+<li><p>pickle         在字符串 和 python几乎所有的数据类型间进行转换</p>
+</li>
+<li><p>shutil          高级的 文件、文件夹、压缩包 处理模块</p>
+</li>
+<li><p>ConfigParser</p>
+</li>
+<li><p>logging       用于记录日志的模块,而且是线程安全的</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> logging</span><br><span class="line"> <span class="comment"># basicConfig 是指基本的配置文件，且配置一次之后将不再接受第二个配置信息，也就是说：多次配置只允许第一次</span></span><br><span class="line"> <span class="comment"># 写入log文件时，是以追加的方式写入的</span></span><br><span class="line"> <span class="comment"># 无法写入中文</span></span><br><span class="line">logging.basicConfig(filename=<span class="string">'log.log'</span>,</span><br><span class="line">                    format=<span class="string">'%(asctime)s - %(name)s - %(levelname)s -%(module)s:  %(message)s'</span>,</span><br><span class="line">                    datefmt=<span class="string">'%Y-%m-%d %H:%M:%S %p'</span>,</span><br><span class="line">                    level=logging.ERROR)</span><br><span class="line"> <span class="string">"""</span></span><br><span class="line"><span class="string">CRITICAL = 50</span></span><br><span class="line"><span class="string">FATAL = CRITICAL</span></span><br><span class="line"><span class="string">ERROR = 40</span></span><br><span class="line"><span class="string">WARNING = 30</span></span><br><span class="line"><span class="string">WARN = WARNING</span></span><br><span class="line"><span class="string">INFO = 20</span></span><br><span class="line"><span class="string">DEBUG = 10</span></span><br><span class="line"><span class="string">NOTSET = 0 </span></span><br><span class="line"><span class="string"> """</span></span><br><span class="line">logging.error(msg, exc_info=<span class="literal">True</span>)  <span class="comment"># exc_info=True可以把错误的位置写入文件</span></span><br><span class="line">logging.debug(<span class="string">'debug'</span>)</span><br><span class="line">logging.info(<span class="string">'info'</span>)</span><br><span class="line">logging.warning(<span class="string">'warning'</span>)</span><br><span class="line">logging.error(<span class="string">'error'</span>)</span><br><span class="line">logging.critical(<span class="string">'critical'</span>)</span><br><span class="line">logging.log(<span class="number">10</span>,<span class="string">'log'</span>)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> logging</span><br><span class="line"></span><br><span class="line">file_handler = logging.FileHandler(<span class="string">'1.log'</span>, <span class="string">'a'</span>, encoding=<span class="string">"utf-8"</span>)  <span class="comment"># 参数和open很像，可对比记忆，实现写文件功能</span></span><br><span class="line">fmt = logging.Formatter(fmt=<span class="string">"%(asctime)s - %(name)s - %(levelname)s -%(module)s:  %(message)s"</span>)  <span class="comment"># 规范写入的格式</span></span><br><span class="line">file_handler.setFormatter(fmt)  <span class="comment"># 将这种格式添加到file_handler对象中，当写文件时就会以这种形式写入</span></span><br><span class="line">logger = logging.Logger(<span class="string">'xsle'</span>, level=logging.ERROR)  <span class="comment"># 负责写入的内容，内部有大量信息，相当于write()</span></span><br><span class="line">logger.addHandler(file_handler) <span class="comment"># 将写文件的相关信息传入logger，以后写入就会以指定方式</span></span><br><span class="line"></span><br><span class="line">logger.error(<span class="string">'填错'</span>)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> logging</span><br><span class="line"><span class="comment"># 可以写入中文，推荐使用</span></span><br><span class="line">file_handler = logging.FileHandler(<span class="string">'demo.log'</span>, mode=<span class="string">'a'</span>, encoding=<span class="string">'utf-8'</span>,)</span><br><span class="line"></span><br><span class="line">logging.basicConfig(</span><br><span class="line">                    format=<span class="string">'%(asctime)s - %(name)s - %(levelname)s -%(module)s:  %(message)s'</span>,</span><br><span class="line">                    datefmt=<span class="string">'%Y-%m-%d %H:%M:%S %p'</span>,</span><br><span class="line">                    handlers=[file_handler],</span><br><span class="line">                    level=logging.ERROR)</span><br><span class="line"></span><br><span class="line">logging.error(<span class="string">"填错"</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<ul>
+<li><p>time            用于对时间进行操作</p>
+</li>
+<li><p>datetime    用于对时间进行操作</p>
+</li>
+<li><p>re              用于对python的正则表达式的操作</p>
+</li>
+<li><p>random     实现随机功能</p>
+</li>
+<li><p>queue        队列  使用方法：import queue   这种队列不能实现进程之间的通信，但是可以满足线程之间的通信，并且是线程安全的，不用在使用时加锁。注意：多个线程对同一个文件进行写操作是线程不安全的。常用方法：from queue import Queue 先进先出队列,应用于服务业     from queue import LifoQueue  后进先出栈,  多用于算法                                         from queue import PriorityQueue 优先级队列  可实现自动排序   vip服务   对象.put((1, “cjx”))   数字越小优先级越高</p>
+</li>
+<li><p>concurrent模块   与进程池和线程池有关</p>
+</li>
+</ul>
+<pre><code><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">from</span> concurrent.futures.process <span class="keyword">import</span> ProcessPoolExecutor  <span class="comment"># 进程池</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="string">'start'</span>, os.getpid())</span><br><span class="line">    time.sleep(random.randint(<span class="number">1</span>, <span class="number">3</span>))</span><br><span class="line">    print(<span class="string">'end'</span>, os.getpid())</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    p = ProcessPoolExecutor(<span class="number">5</span>)  <span class="comment"># 提前创建好5个进程并放在一个池子里</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>):</span><br><span class="line">        p.submit(func)  <span class="comment"># 提交进程所要执行的函数</span></span><br><span class="line">    p.shutdown()  <span class="comment"># 关闭池之后，不能再提交任务，并且会阻塞，直到池中的所有任务执行完毕</span></span><br><span class="line">    print(<span class="string">'main'</span>, os.getpid())</span><br></pre></td></tr></table></figure></code></pre>
       
 
       
@@ -189,211 +248,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/05/15/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-测试文" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/15/%E6%B5%8B%E8%AF%95%E6%96%87/">测试文</a>
-    </h1>
-  
-
-        
-        <a href="/2020/05/15/%E6%B5%8B%E8%AF%95%E6%96%87/" class="archive-article-date">
-  	<time datetime="2020-05-15T14:09:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/05/15/%E6%B5%8B%E8%AF%95%E6%96%87/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-我的第一篇博客文章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/15/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/">我的第一篇博客文章</a>
-    </h1>
-  
-
-        
-        <a href="/2020/05/15/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" class="archive-article-date">
-  	<time datetime="2020-05-15T02:42:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h2><p>内容</p>
-<hr>
-<h2 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h2><p>内容</p>
-<hr>
-<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/05/15/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/15/hello-world/">Hello World</a>
-    </h1>
-  
-
-        
-        <a href="/2020/05/15/hello-world/" class="archive-article-date">
-  	<time datetime="2020-05-15T02:27:18.919Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/05/15/hello-world/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/09/29/python%E4%B9%8B%E8%B7%AF/">展开全文 >></a>
         </p>
       
 
