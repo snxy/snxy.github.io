@@ -42,11 +42,11 @@
 <div class="overlay" style="background: #4d4d4d"></div>
 <div class="intrude-less">
 	<header id="header" class="inner">
-		<a href="/" class="profilepic">
-			<img src="img\avatar.png" class="js-avatar">
+		<a href="/themes/yilia/source/" class="profilepic">
+			<img src="/assets/avatar.png" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">十年小妖</a></h1>
+		  <h1 class="header-author"><a href="/themes/yilia/source/">十年小妖</a></h1>
 		</hgroup>
 		
 
@@ -103,7 +103,7 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="img\avatar.png" class="js-avatar">
+				<img src="/assets/avatar.png" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">十年小妖</h1>
@@ -158,6 +158,267 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-正则表达式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/10/09/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">正则表达式</a>
+    </h1>
+  
+
+        
+        <a href="/2020/10/09/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="archive-article-date">
+  	<time datetime="2020-10-09T14:45:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-09</time>
+</a>
+        <!-- 需要添加的位置 -->
+        <!-- 开始添加字数统计-->
+        
+          <div style="margin-top:10px;">
+    <span class="post-time">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-keyboard-o"></i>
+        <span class="post-meta-item-text">  字数统计: </span>
+        <span class="post-count">930字</span>
+      </span>
+    </span>
+
+    <span class="post-time">
+      &nbsp; | &nbsp;
+      <span class="post-meta-item-icon">
+        <i class="fa fa-hourglass-half"></i>
+        <span class="post-meta-item-text">  阅读时长: </span>
+        <span class="post-count">3分</span>
+      </span>
+    </span>
+</div>
+          
+        <!-- 添加完成 -->
+
+        
+    
+    
+        
+    
+    
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式:"></a>正则表达式:</h2><h3 id="元字符"><a href="#元字符" class="headerlink" title="元字符:"></a>元字符:</h3><pre><code>* \d    所有数字，相当于[0-9]
+* \w   标识符，即数字，大小写字母 ，下划线
+* \s    空白，即空格，制表符，换行符
+* \D   除了数字外的所有字符
+* \W  除了标识符外的所有字符
+* \S   除了空白外的所有字符
+* \n   换行符
+* \t    制表符
+* .     除换行符外任意字符
+* []    字符组 
+* [^]   非字符组  不匹配符合条件的字符 \[^\d] 不匹配数字 
+* ^     以……开始   ^a  
+* $     以……结束   a$
+* |      或  两种情况都可   a|b  ab都可以    **如果有包含关系，把长的放在前面**
+* ()     限定作用域，一般与 | 一起使用   也可用来限定多个量词的约束 (\d\w)?</code></pre><h3 id="量词"><a href="#量词" class="headerlink" title="量词:"></a>量词:</h3><ul>
+<li>{n}    表示有n个字符</li>
+<li>{n,}   表示至少有n个字符</li>
+<li>{n, m} 表示有n-m个字符  例如 {2, 3}就是要么有2个字符要么有3个字符</li>
+<li>?      表示有0个或1个字符</li>
+<li>+      表示有1个或多个字符</li>
+<li>*       表示有0个或多个字符</li>
+</ul>
+<h3 id="模式"><a href="#模式" class="headerlink" title="模式:"></a>模式:</h3><p>贪婪匹配: 默认    在规则和量词范围内尽可能多的匹配     回溯算法</p>
+<p>非贪婪匹配（惰性匹配）：尽量少的匹配       .*?x   表示匹配任意的内容直到遇到x才停止</p>
+<h3 id=""><a href="#" class="headerlink" title=""></a></h3><h3 id="分组"><a href="#分组" class="headerlink" title="分组"></a>分组</h3><ul>
+<li>分组命名    (?P=&lt;名字&gt;正则表达式)   例如     (?P=<tag>\w+)      search   g?roup(‘组名’)</li>
+<li>引用分组    (?P=组名)     表示这个组中的内容必须和之前组名的分组一样 并且引用分组时括号内不能有其他的正则表达式</li>
+<li>分组和findall    默认优先显示分组中的内容     取消优先显示的方法是   (?:正则表达式)</li>
+<li>分组和split     会保留分组中本应该被切割掉的内容   (正则表达式)    例如  (\d+)  保留本应该被切掉的数字</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">\<span class="comment">#返回pattern对象</span></span><br><span class="line"></span><br><span class="line">re.compile(string[,flag]) </span><br><span class="line"></span><br><span class="line">\<span class="comment">#以下为匹配所用函数</span></span><br><span class="line"></span><br><span class="line">re.match(pattern, string[, flags])  <span class="comment"># 这个方法将会从string（我们要匹配的字符串）的开头开始，尝试匹配pattern，一直向后匹配，如果遇到无法匹配的字符，立即返回None，如果匹配未结束已经到达string的末尾，也会返回None  # 参数flag是匹配模式，取值可以使用按位或运算符’|’表示同时生效，比如re.I | re.M    		   </span></span><br><span class="line">		• re.I(全拼：IGNORECASE): 忽略大小写（括号内是完整写法，下同）</span><br><span class="line">        • re.M(全拼：MULTILINE): 多行模式，改变<span class="string">'^'</span>和<span class="string">'$'</span>的行为（参见上图）</span><br><span class="line">        • re.S(全拼：DOTALL): 点任意匹配模式，改变<span class="string">'.'</span>的行为</span><br><span class="line">        • re.L(全拼：LOCALE): 使预定字符类 \w \W \b \B \s \S 取决于当前区域设定</span><br><span class="line">        • re.U(全拼：UNICODE): 使预定字符类 \w \W \b \B \s \S \d \D 取决于unicode定义的字符属性</span><br><span class="line">        • re.X(全拼：VERBOSE): 详细模式。这个模式下正则表达式可以是多行，忽略空白字符，并可以加入注释。</span><br><span class="line"></span><br><span class="line">re.search(pattern, string[, flags])   <span class="comment"># search()会扫描整个string查找匹配 使用search()查找匹配的子串，不存在能匹配的子串时将返回None</span></span><br><span class="line"></span><br><span class="line">re.findall(pattern, string[, flags])  <span class="comment"># 以列表形式返回全部能匹配的子串</span></span><br><span class="line">re.sub(pattern, repl, string[, count])  <span class="comment">#使用repl替换string中每一个匹配的子符串,然后返回替换后的字符串。count用于指定最多替换次数，不指定时全部替换。</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">	如果正则表达式中定义了组，就可以在Match对象上用group()方法提取出子串来。</span></span><br><span class="line"><span class="string">	注意到group(0)永远是原始字符串，group(1)、group(2)……表示第1、2、……个子串。</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line">m = re.match(<span class="string">r'^(\d&#123;3&#125;)-(\d&#123;3,8&#125;)$'</span>, <span class="string">'010-12345'</span>)</span><br><span class="line">print(m.group(<span class="number">0</span>))  <span class="comment"># 010-12345</span></span><br><span class="line">print(m.group(<span class="number">1</span>))  <span class="comment"># 010</span></span><br><span class="line">print(m.group(<span class="number">2</span>))  <span class="comment"># 12345</span></span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/正则表达式//" class="article-tag-list-link color1">正则表达式</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/10/09/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-面向对象" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/10/09/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">面向对象</a>
+    </h1>
+  
+
+        
+        <a href="/2020/10/09/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" class="archive-article-date">
+  	<time datetime="2020-10-09T14:38:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-09</time>
+</a>
+        <!-- 需要添加的位置 -->
+        <!-- 开始添加字数统计-->
+        
+          <div style="margin-top:10px;">
+    <span class="post-time">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-keyboard-o"></i>
+        <span class="post-meta-item-text">  字数统计: </span>
+        <span class="post-count">107字</span>
+      </span>
+    </span>
+
+    <span class="post-time">
+      &nbsp; | &nbsp;
+      <span class="post-meta-item-icon">
+        <i class="fa fa-hourglass-half"></i>
+        <span class="post-meta-item-text">  阅读时长: </span>
+        <span class="post-count">1分</span>
+      </span>
+    </span>
+</div>
+          
+        <!-- 添加完成 -->
+
+        
+    
+    
+        
+    
+    
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="面向对象："><a href="#面向对象：" class="headerlink" title="面向对象："></a>面向对象：</h2><h3 id="三大特性-封装-继承-多态"><a href="#三大特性-封装-继承-多态" class="headerlink" title="三大特性: 封装  继承  多态"></a>三大特性: 封装  继承  多态</h3><h3 id="类成员"><a href="#类成员" class="headerlink" title="类成员:"></a>类成员:</h3><h3 id="类和函数的加载过程"><a href="#类和函数的加载过程" class="headerlink" title="类和函数的加载过程"></a>类和函数的加载过程</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span><span class="params">(object)</span>:</span></span><br><span class="line">    discount = <span class="number">0.8</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.discount = <span class="number">0.5</span></span><br><span class="line">    print(discount)</span><br><span class="line"></span><br><span class="line">A.discount = <span class="number">1</span>  <span class="comment"># 修改类变量的值</span></span><br></pre></td></tr></table></figure>
+
+<p>通过该例题,可以总结出: 类在加载的过程中,会执行类中的代码，但是函数或方法在加载的过程中是不会执行代码的，只有调用时才执行</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/面向对象//" class="article-tag-list-link color5">面向对象</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/10/09/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-python之路" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -173,6 +434,30 @@
         <a href="/2020/10/01/python%E4%B9%8B%E8%B7%AF/" class="archive-article-date">
   	<time datetime="2020-10-01T01:44:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-01</time>
 </a>
+        <!-- 需要添加的位置 -->
+        <!-- 开始添加字数统计-->
+        
+          <div style="margin-top:10px;">
+    <span class="post-time">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-keyboard-o"></i>
+        <span class="post-meta-item-text">  字数统计: </span>
+        <span class="post-count">1.8k字</span>
+      </span>
+    </span>
+
+    <span class="post-time">
+      &nbsp; | &nbsp;
+      <span class="post-meta-item-icon">
+        <i class="fa fa-hourglass-half"></i>
+        <span class="post-meta-item-text">  阅读时长: </span>
+        <span class="post-count">7分</span>
+      </span>
+    </span>
+</div>
+          
+        <!-- 添加完成 -->
+
         
     
     
@@ -183,71 +468,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="基本的数据类型"><a href="#基本的数据类型" class="headerlink" title="基本的数据类型:"></a>基本的数据类型:</h2><pre><code>* str
-* int
-* dict
-* tuple
-* set
-* list</code></pre><h2 id="模块"><a href="#模块" class="headerlink" title="模块:"></a>模块:</h2><h2 id="内置模块"><a href="#内置模块" class="headerlink" title="内置模块"></a>内置模块</h2><ul>
-<li><p>os              用于提供系统级别的操作</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">os.getcwd() 获取当前工作目录，即当前python脚本工作的项目的路径</span><br><span class="line">os.chdir(<span class="string">"dirname"</span>)  改变当前脚本工作目录；相当于shell下cd</span><br><span class="line">os.curdir  返回当前目录: (<span class="string">'.'</span>)   </span><br><span class="line">os.pardir  获取当前目录的父目录字符串名：(<span class="string">'..'</span>)</span><br><span class="line">os.mkdir(<span class="string">'dirname'</span>)    生成单级目录；相当于shell中mkdir dirname,只能生成一级目录,不能生成多级目录.参数为相对路径,没有返回值</span><br><span class="line">os.makedirs(<span class="string">'dirname1/dirname2'</span>)    可生成多层递归目录,即可创建多级目录,参数为相对路径,没有返回值,建议使用!</span><br><span class="line">os.removedirs(<span class="string">'dirname1'</span>)    若目录为空，则删除，并递归到上一级目录，如若也为空，则删除，依此类推</span><br><span class="line">os.rmdir(<span class="string">'dirname'</span>)    删除单级空目录，若目录不为空则无法删除，报错；相当于shell中rmdir dirname</span><br><span class="line">os.listdir(<span class="string">'dirname'</span>)    列出指定目录下的所有文件和子目录，包括隐藏文件，并以列表方式打印</span><br><span class="line">os.remove()  删除一个文件,参数为要删除文件的相对路径,没有返回值</span><br><span class="line">os.rename(<span class="string">"oldname"</span>,<span class="string">"newname"</span>)  重命名文件/目录</span><br><span class="line">os.stat(<span class="string">'path/filename'</span>)  获取文件/目录信息</span><br><span class="line">os.sep    输出操作系统特定的路径分隔符，win下为<span class="string">"\\"</span>,Linux下为<span class="string">"/"</span></span><br><span class="line">os.linesep    输出当前平台使用的行终止符，win下为<span class="string">"\t\n"</span>,Linux下为<span class="string">"\n"</span></span><br><span class="line">os.pathsep    输出用于分割文件路径的字符串</span><br><span class="line">os.name    输出字符串指示当前使用平台。win-&gt;'nt'; Linux-&gt;'posix'</span><br><span class="line">os.system(<span class="string">"bash command"</span>)  运行shell命令，直接显示</span><br><span class="line">os.environ  获取系统环境变量</span><br><span class="line">os.path.abspath(path)  返回path规范化的绝对路径</span><br><span class="line">os.path.split(path)  将path分割成目录和文件名二元组返回</span><br><span class="line">os.path.dirname(path)  返回path的目录。其实就是os.path.split(path)的第一个元素</span><br><span class="line">os.path.basename(path)  返回path最后的文件名。如何path以／或\结尾，那么就会返回空值。即os.path.split(path)的第二个元素</span><br><span class="line">os.path.exists(path)  如果path存在，返回<span class="literal">True</span>；如果path不存在，返回<span class="literal">False</span></span><br><span class="line">os.path.isabs(path)  如果path是绝对路径，返回<span class="literal">True</span></span><br><span class="line">os.path.isfile(path)  如果path是一个存在的文件，返回<span class="literal">True</span>。否则返回<span class="literal">False</span></span><br><span class="line">os.path.isdir(path)  如果path是一个存在的目录，则返回<span class="literal">True</span>。否则返回<span class="literal">False</span></span><br><span class="line">os.path.join(path1[, path2[, ...]])  将多个路径组合后返回，第一个绝对路径之前的参数将被忽略</span><br><span class="line">os.path.getatime(path)  返回path所指向的文件或者目录的最后存取时间</span><br><span class="line">os.path.getmtime(path)  返回path所指向的文件或者目录的最后修改时间</span><br></pre></td></tr></table></figure>
-
-
-
-</li>
-</ul>
-<ul>
-<li><p>sys            用于提供对解释器相关的操作</p>
-</li>
-<li><p>shutil         –移动 复制 打包 压缩 解压</p>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">shutil.copyfileobj(fsrc, fdst[, length=<span class="number">16</span>*<span class="number">1024</span>])  <span class="comment"># 将文件内容拷贝到另一个文件中,可以指定大小的内容,示例:</span></span><br><span class="line">											  <span class="comment"># shutil.copyfileobj(open('old.xml','r'), open('new.xml', 'w'))</span></span><br><span class="line">shutil.copyfile(src, dst)  <span class="comment"># 复制文件 shutil.copyfile('f1.log', 'f2.log') 目标文件无需存在，copyfile内部调用了</span></span><br><span class="line">						 <span class="comment"># copyfileobj	如果想删除E盘下某个文件夹</span></span><br><span class="line">shutil.rmtree(path[, ignore_errors[, onerror]])  <span class="comment"># 递归的去删除文件	如果想删除某个文件夹,这个方法可以删除这个文件夹【包括</span></span><br><span class="line">											 <span class="comment"># 子文件夹】示例：shutil.rmtree('folder1')</span></span><br><span class="line">shutil.move(src, dst)    <span class="comment"># 递归的去移动文件，它类似mv命令，也可以重命名。移动文件夹或者文件  示例：</span></span><br><span class="line">					   <span class="comment"># shutil.move('folder1', 'folder3')</span></span><br><span class="line"><span class="comment"># 压缩</span></span><br><span class="line">make_archive(base_name, format, root_dir=<span class="literal">None</span>, base_dir=<span class="literal">None</span>, verbose=<span class="number">0</span>,dry_run=<span class="number">0</span>, owner=<span class="literal">None</span>, group=<span class="literal">None</span>, logger=<span class="literal">None</span>)</span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">  * base_name： 压缩包的文件名，也可以是压缩包的路径。只是文件名时，则保存至当前目录，否则保存至指定路径，</span></span><br><span class="line"><span class="string"> 	 * 如 data_bak =&gt;保存至当前路径</span></span><br><span class="line"><span class="string"> 	 * 如：/tmp/data_bak =&gt;保存至/tmp/</span></span><br><span class="line"><span class="string">  * format：	压缩包种类，“zip”, “tar”, “bztar”，“gztar”</span></span><br><span class="line"><span class="string">  * root_dir：要压缩的文件夹路径（默认当前目录）</span></span><br><span class="line"><span class="string">  * base_dir：要进行压缩的源文件或目录</span></span><br><span class="line"><span class="string">  * owner：	用户，默认当前用户</span></span><br><span class="line"><span class="string">  * group：	组，默认当前组</span></span><br><span class="line"><span class="string">  * logger：	用于记录日志，通常是logging.Logger对象</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="comment"># 解压缩</span></span><br><span class="line">shutil.unpack_archive(filename, extract_dir=<span class="literal">None</span>, format=<span class="literal">None</span>)</span><br><span class="line">	<span class="comment"># 列子</span></span><br><span class="line">    	shutil.unpack_archive(<span class="string">'/home/1/a.zip'</span>, <span class="string">'/home/2/'</span>)  <span class="comment"># 把'/home/1/a.zip'p解压缩到'/home/2/'format可以不写，自动识别文件类型</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<ul>
-<li><p>hashlib      用于加密相关的操作，代替了md5模块和sha模块</p>
-</li>
-<li><p>json           将字符串 和 python的某些数据类型(int, str, dict, list……)进行转换</p>
-<p><img src="https://images.cnblogs.com/cnblogs_com/coser/201112/201112141621131652.png" alt="image"></p>
-</li>
-</ul>
-<ul>
-<li><p>pickle         在字符串 和 python几乎所有的数据类型间进行转换</p>
-</li>
-<li><p>shutil          高级的 文件、文件夹、压缩包 处理模块</p>
-</li>
-<li><p>ConfigParser</p>
-</li>
-<li><p>logging       用于记录日志的模块,而且是线程安全的</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> logging</span><br><span class="line"> <span class="comment"># basicConfig 是指基本的配置文件，且配置一次之后将不再接受第二个配置信息，也就是说：多次配置只允许第一次</span></span><br><span class="line"> <span class="comment"># 写入log文件时，是以追加的方式写入的</span></span><br><span class="line"> <span class="comment"># 无法写入中文</span></span><br><span class="line">logging.basicConfig(filename=<span class="string">'log.log'</span>,</span><br><span class="line">                    format=<span class="string">'%(asctime)s - %(name)s - %(levelname)s -%(module)s:  %(message)s'</span>,</span><br><span class="line">                    datefmt=<span class="string">'%Y-%m-%d %H:%M:%S %p'</span>,</span><br><span class="line">                    level=logging.ERROR)</span><br><span class="line"> <span class="string">"""</span></span><br><span class="line"><span class="string">CRITICAL = 50</span></span><br><span class="line"><span class="string">FATAL = CRITICAL</span></span><br><span class="line"><span class="string">ERROR = 40</span></span><br><span class="line"><span class="string">WARNING = 30</span></span><br><span class="line"><span class="string">WARN = WARNING</span></span><br><span class="line"><span class="string">INFO = 20</span></span><br><span class="line"><span class="string">DEBUG = 10</span></span><br><span class="line"><span class="string">NOTSET = 0 </span></span><br><span class="line"><span class="string"> """</span></span><br><span class="line">logging.error(msg, exc_info=<span class="literal">True</span>)  <span class="comment"># exc_info=True可以把错误的位置写入文件</span></span><br><span class="line">logging.debug(<span class="string">'debug'</span>)</span><br><span class="line">logging.info(<span class="string">'info'</span>)</span><br><span class="line">logging.warning(<span class="string">'warning'</span>)</span><br><span class="line">logging.error(<span class="string">'error'</span>)</span><br><span class="line">logging.critical(<span class="string">'critical'</span>)</span><br><span class="line">logging.log(<span class="number">10</span>,<span class="string">'log'</span>)</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> logging</span><br><span class="line"></span><br><span class="line">file_handler = logging.FileHandler(<span class="string">'1.log'</span>, <span class="string">'a'</span>, encoding=<span class="string">"utf-8"</span>)  <span class="comment"># 参数和open很像，可对比记忆，实现写文件功能</span></span><br><span class="line">fmt = logging.Formatter(fmt=<span class="string">"%(asctime)s - %(name)s - %(levelname)s -%(module)s:  %(message)s"</span>)  <span class="comment"># 规范写入的格式</span></span><br><span class="line">file_handler.setFormatter(fmt)  <span class="comment"># 将这种格式添加到file_handler对象中，当写文件时就会以这种形式写入</span></span><br><span class="line">logger = logging.Logger(<span class="string">'xsle'</span>, level=logging.ERROR)  <span class="comment"># 负责写入的内容，内部有大量信息，相当于write()</span></span><br><span class="line">logger.addHandler(file_handler) <span class="comment"># 将写文件的相关信息传入logger，以后写入就会以指定方式</span></span><br><span class="line"></span><br><span class="line">logger.error(<span class="string">'填错'</span>)</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> logging</span><br><span class="line"><span class="comment"># 可以写入中文，推荐使用</span></span><br><span class="line">file_handler = logging.FileHandler(<span class="string">'demo.log'</span>, mode=<span class="string">'a'</span>, encoding=<span class="string">'utf-8'</span>,)</span><br><span class="line"></span><br><span class="line">logging.basicConfig(</span><br><span class="line">                    format=<span class="string">'%(asctime)s - %(name)s - %(levelname)s -%(module)s:  %(message)s'</span>,</span><br><span class="line">                    datefmt=<span class="string">'%Y-%m-%d %H:%M:%S %p'</span>,</span><br><span class="line">                    handlers=[file_handler],</span><br><span class="line">                    level=logging.ERROR)</span><br><span class="line"></span><br><span class="line">logging.error(<span class="string">"填错"</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-</li>
-</ul>
-<ul>
-<li><p>time            用于对时间进行操作</p>
-</li>
-<li><p>datetime    用于对时间进行操作</p>
-</li>
-<li><p>re              用于对python的正则表达式的操作</p>
-</li>
-<li><p>random     实现随机功能</p>
-</li>
-<li><p>queue        队列  使用方法：import queue   这种队列不能实现进程之间的通信，但是可以满足线程之间的通信，并且是线程安全的，不用在使用时加锁。注意：多个线程对同一个文件进行写操作是线程不安全的。常用方法：from queue import Queue 先进先出队列,应用于服务业     from queue import LifoQueue  后进先出栈,  多用于算法                                         from queue import PriorityQueue 优先级队列  可实现自动排序   vip服务   对象.put((1, “cjx”))   数字越小优先级越高</p>
-</li>
-<li><p>concurrent模块   与进程池和线程池有关</p>
-</li>
-</ul>
-<pre><code><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">from</span> concurrent.futures.process <span class="keyword">import</span> ProcessPoolExecutor  <span class="comment"># 进程池</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="string">'start'</span>, os.getpid())</span><br><span class="line">    time.sleep(random.randint(<span class="number">1</span>, <span class="number">3</span>))</span><br><span class="line">    print(<span class="string">'end'</span>, os.getpid())</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    p = ProcessPoolExecutor(<span class="number">5</span>)  <span class="comment"># 提前创建好5个进程并放在一个池子里</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>):</span><br><span class="line">        p.submit(func)  <span class="comment"># 提交进程所要执行的函数</span></span><br><span class="line">    p.shutdown()  <span class="comment"># 关闭池之后，不能再提交任务，并且会阻塞，直到池中的所有任务执行完毕</span></span><br><span class="line">    print(<span class="string">'main'</span>, os.getpid())</span><br></pre></td></tr></table></figure></code></pre>
+        <h2 id="基本的数据类型"><a href="#基本的数据类型" class="headerlink" title="基本的数据类型:"></a>基本的数据类型:</h2>
+        
       
 
       
@@ -428,6 +650,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">前端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
               </li>
             
             <div class="clearfix"></div>
